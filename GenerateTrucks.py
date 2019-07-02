@@ -1,1 +1,0 @@
-### Un camion possèdent les caractèrisques suivantes : Capacitée
