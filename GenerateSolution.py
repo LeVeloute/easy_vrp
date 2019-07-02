@@ -7,4 +7,10 @@ while(os.path.exists("truck" + str(y) + "Solved")):
     os.remove("truck" + str(y) + "Solved")
     y = y + 1
 
-os.system("C:/Python27/python.exe GenerateSolution.py 50 100 truck0 < truck0")
+y = 0
+while(os.path.exists("truck" + str(y))):
+    y = y + 1
+
+for loop in range(y):
+    os.system("C:/Python27/python.exe GeneticEngine.py 50 100 truck" + str(loop) +" < truck" + str(loop))
+    
