@@ -138,6 +138,18 @@ def adjust(p):
 		if p[i] == 0 and p[i + 1] == 0:
 			del p[i]
 		i -= 1
+	# Fix the last 0 bypass
+	if(p[len(p)-1] == 0):
+		print("last p == 0")
+		print(p)
+		for nodeId in range(len(vrp['nodes'])):
+			if nodeId not in p:
+				p[len(p)-1] = nodeId
+				break
+		print("fixed")
+		print(p)
+		exit()
+
 
 
 popsize = int(sys.argv[1])
