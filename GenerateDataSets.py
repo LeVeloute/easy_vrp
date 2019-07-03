@@ -1,5 +1,4 @@
 # encoding: utf-8
-### Un noeud possèdent les caractèrisques suivantes : Coordonnées X, Y
 
 
 import sys
@@ -13,18 +12,23 @@ while(os.path.exists("truck" + str(y))):
     os.remove("truck" + str(y))
     y = y + 1
 
-nodesCount = 0
+y = 0
+while(os.path.exists("truck" + str(y) + "Solved")):
+    print("delete")
+    os.remove("truck" + str(y) + "Solved")
+    y = y + 1
 
-maxcap = 100
+
+maxcap = 10
 minX = -100
 maxX = 100
 minY = -100
 maxY = 100
-nodesCount = random.uniform(0, 100)
+nodesCount = 10
 
 
 o = 0
-while(o == 0 or random.random()>0.3):
+while(o < 7):
     print("Their is a colis")
     truck = "truck" + str(o)
     file = open(truck, "w")

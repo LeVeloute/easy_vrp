@@ -129,7 +129,7 @@ def adjust(p):
 	while i < len(p):
 		s += vrp['nodes'][p[i]]['demand']
 		if s > cap:
-			#p.insert(i, 0)
+			p.insert(i, 0)
 			s = 0.0
 		i += 1
 	i = len(p) - 2
@@ -154,7 +154,6 @@ for i in range(popsize):
 
 for p in pop:
 	adjust(p)
-
 
 # xpts = []
 # ypts = []
@@ -225,18 +224,16 @@ for p in pop:
 		bf = f
 		better = p
 
+print(better)
 
 ## After processing the algorithm, now outputting it ##
 
-
+file = open(name + "Solved","w")
 # Printing the solution
 print("route:")
-print("depot")
-
-file = open(name + "Solved","w")
-print(better)
+file.write("depot\n")
 for nodeIdx in better:
-	file.write(str(vrp['nodes'][nodeIdx]['label']) + "\n")
+	file.write(vrp['nodes'][nodeIdx]['label'] + "\n")
 file.write("depot")
 print("cost:")
 print(bf)
