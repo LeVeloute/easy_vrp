@@ -1,4 +1,5 @@
 # encoding: utf-8
+import os
 import sys
 import random
 import math
@@ -184,7 +185,6 @@ for p in pop:
 
 # Running the genetic algorithm
 for i in range(iterations):
-	print(i)
 	nextPop = []
 	# Each one of this iteration will generate two descendants individuals. Therefore, to guarantee same population size, this will iterate half population size times
 	for j in range(int(len(pop) / 2)):
@@ -240,3 +240,6 @@ for nodeIdx in better:
 file.write("depot")
 print("cost:")
 print(bf)
+f = open('tmp.txt', 'wt')
+f.write(str(bf))
+f.close()

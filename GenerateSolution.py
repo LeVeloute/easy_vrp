@@ -1,5 +1,11 @@
 import os
+import time
+import csv
 
+pop = 50
+iteration = 100
+
+currentTime = time.time()
 
 y = 0
 while(os.path.exists("truck" + str(y) + "Solved")):
@@ -12,6 +18,7 @@ while(os.path.exists("truck" + str(y))):
     y = y + 1
 
 for loop in range(y):
-    os.system("C:/Python27/python.exe GeneticEngineV2.py 50 100 truck" + str(loop) +" < truck" + str(loop))
+    os.system("python GeneticEngine.py " + str(pop) + " " + str(iteration) + " truck" + str(loop) +" < truck" + str(loop))
 
-#os.system("C:/Python27/python.exe TestGenerateSimulation.py")
+duration = (time.time()) - currentTime
+print("Duration time: " + str(duration))
